@@ -1,0 +1,26 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "React concepts getting polished",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karan-Bharti1/React-Polished.git"
+  },
+  "keywords": [],
+  "author": "Karan Bharti",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karan-Bharti1/React-Polished/issues"
+  },
+  "homepage": "https://github.com/Karan-Bharti1/React-Polished#readme",
+  "devDependencies": {
+    "parcel": "^2.15.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  }
+}
