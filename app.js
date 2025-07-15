@@ -1,5 +1,10 @@
-import React from "react"
-import ReactDOM from "react-dom/client"
-const jsxHeading=<h1 id="heading">I am Karan</h1>// jsxHeading also returns object
-const root=ReactDOM.createRoot(document.getElementById("root"))
-root.render(jsxHeading)
+import React from "react";
+import ReactDOM from "react-dom/client";
+const Heading=()=>{
+  return(<>
+  <h1>Heading with Functional Components</h1>
+  </>)
+}
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<Heading/>);
+
