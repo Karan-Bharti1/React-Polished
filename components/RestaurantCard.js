@@ -1,13 +1,13 @@
 import React from 'react'
 
-function RestaurantCard() {
+function RestaurantCard(props) {
   return (
     <div className='res-card'>
-        <img className='res-img' src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/FOOD_CATALOG/IMAGES/CMS/2024/7/26/30fbd676-705b-4f8f-97b4-35a11ea149c3_a7820718-5b9a-4c21-af00-d99ce8ce4d11.jpeg" alt='Res Card'/>
-        <h3>Meghana Foods</h3>
-        <h4>South Indian, Dosa , Idli</h4>
-        <h4>4.2 stars</h4>
-        <h4>38 mins</h4>
+        <img className='res-img' src={props.url} alt='Res Card'/>
+        <h3>{props.name}</h3>
+        <h4>{props.cuisine}</h4>
+        <h4>{props.rating} stars</h4>
+        <h4>{props.time} mins</h4>
     </div>
   )
 }
