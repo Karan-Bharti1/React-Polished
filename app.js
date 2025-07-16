@@ -6,7 +6,7 @@ import Body from "./components/Body";
 const AppLayout=()=>{
   return(<div>
     <Header/>
-    <hr/>
+   
     <Body/>
   </div>)
 }
