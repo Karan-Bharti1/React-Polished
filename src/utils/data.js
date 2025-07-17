@@ -538,4 +538,343 @@ export const restaurantData = [
     },
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
+  {
+    info: {
+      id: "81041",
+      name: "Amrit Sweets Phase 5",
+      cloudinaryImageId: "ghemfhdccguwa9bjjzxu",
+      locality: "Phase 5",
+      areaName: "Phase 5",
+      costForTwo: "₹250 for two",
+      cuisines: ["South Indian", "Chinese", "Sweets", "Desserts", "Tandoor"],
+      avgRating: 4.6,
+      veg: true,
+      parentId: "643238",
+      avgRatingString: "4.6",
+      totalRatingsString: "89K+",
+      sla: {
+        deliveryTime: 19,
+        lastMileTravel: 1.8,
+        serviceability: "SERVICEABLE",
+        slaString: "15-20 mins",
+        lastMileTravelString: "1.8 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2025-07-17 22:30:00",
+        opened: true,
+      },
+      badges: {
+        imageBadges: [
+          {
+            imageId: "bolt/big%20rx%20listing%2015%20mins%20.png",
+            description: "bolt!",
+          },
+          {
+            imageId: "Rxawards/_CATEGORY-Mithai.png",
+            description: "Delivery!",
+          },
+        ],
+      },
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {
+            badgeObject: [
+              {
+                attributes: {
+                  description: "bolt!",
+                  imageId: "bolt/big%20rx%20listing%2015%20mins%20.png",
+                },
+              },
+              {
+                attributes: {
+                  description: "Delivery!",
+                  imageId: "Rxawards/_CATEGORY-Mithai.png",
+                },
+              },
+            ],
+          },
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "ITEMS",
+        subHeader: "AT ₹75",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+      externalRatings: {
+        aggregatedRating: {
+          rating: "4.2",
+          ratingCount: "6.4K+",
+        },
+        source: "GOOGLE",
+        sourceIconImageId: "v1704440323/google_ratings/rating_google_tag",
+      },
+      ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+    },
+    analytics: {
+      context: "seo-data-e9a27abf-ac63-46cd-a7da-166d8c006722",
+    },
+    cta: {
+      link: "https://www.swiggy.com/city/chandigarh/amrit-sweets-phase-5-phase-5-rest81041",
+      type: "WEBLINK",
+    },
+  },
+  {
+    info: {
+      id: "50891",
+      name: "Urban Pinds Food Factory",
+      cloudinaryImageId: "cslaetxaltepq8rmhgrc",
+      locality: "Near Lawrence Learning Loudge",
+      areaName: "Sector 68",
+      costForTwo: "₹300 for two",
+      cuisines: [
+        "Chinese",
+        "South Indian",
+        "North Eastern",
+        "Desserts",
+        "Thalis",
+        "Continental",
+        "Punjabi",
+        "Mughlai",
+      ],
+      avgRating: 4.3,
+      parentId: "220109",
+      avgRatingString: "4.3",
+      totalRatingsString: "119K+",
+      sla: {
+        deliveryTime: 23,
+        lastMileTravel: 2.5,
+        serviceability: "SERVICEABLE",
+        slaString: "20-25 mins",
+        lastMileTravelString: "2.5 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2025-07-17 23:59:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "60% OFF",
+        discountTag: "FLAT DEAL",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+      externalRatings: {
+        aggregatedRating: {
+          rating: "--",
+        },
+      },
+      ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+    },
+    analytics: {
+      context: "seo-data-e9a27abf-ac63-46cd-a7da-166d8c006722",
+    },
+    cta: {
+      link: "https://www.swiggy.com/city/chandigarh/urban-pinds-food-factory-near-lawrence-learning-loudge-sector-68-rest50891",
+      type: "WEBLINK",
+    },
+  },
+  {
+    info: {
+      id: "621238",
+      name: "Theobroma",
+      cloudinaryImageId:
+        "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/23/76f2a1fd-efc3-4044-b67c-8b68e790d75d_621238.JPG",
+      locality: "Sahibzada Ajit Singh Nagar",
+      areaName: "Sahibzada Ajit Singh Nagar",
+      costForTwo: "₹400 for two",
+      cuisines: ["Desserts"],
+      avgRating: 4.6,
+      parentId: "1040",
+      avgRatingString: "4.6",
+      totalRatingsString: "2.4K+",
+      sla: {
+        deliveryTime: 14,
+        lastMileTravel: 1.1,
+        serviceability: "SERVICEABLE",
+        slaString: "10-15 mins",
+        lastMileTravelString: "1.1 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2025-07-18 02:00:00",
+        opened: true,
+      },
+      badges: {
+        imageBadges: [
+          {
+            imageId: "bolt/big%20rx%20listing%2015%20mins%20.png",
+            description: "bolt!",
+          },
+          {
+            imageId: "Rxawards/_CATEGORY-Desserts.png",
+            description: "Delivery!",
+          },
+          {
+            imageId: "newg.png",
+            description: "Gourmet",
+          },
+        ],
+      },
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {
+            badgeObject: [
+              {
+                attributes: {
+                  description: "bolt!",
+                  imageId: "bolt/big%20rx%20listing%2015%20mins%20.png",
+                },
+              },
+              {
+                attributes: {
+                  description: "Delivery!",
+                  imageId: "Rxawards/_CATEGORY-Desserts.png",
+                },
+              },
+              {
+                attributes: {
+                  description: "Gourmet",
+                  imageId: "newg.png",
+                },
+              },
+            ],
+          },
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "ITEMS",
+        subHeader: "AT ₹49",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+      externalRatings: {
+        aggregatedRating: {
+          rating: "3.8",
+          ratingCount: "266",
+        },
+        source: "GOOGLE",
+        sourceIconImageId: "v1704440323/google_ratings/rating_google_tag",
+      },
+      ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+    },
+    analytics: {
+      context: "seo-data-e9a27abf-ac63-46cd-a7da-166d8c006722",
+    },
+    cta: {
+      link: "https://www.swiggy.com/city/chandigarh/theobroma-sahibzada-ajit-singh-nagar-rest621238",
+      type: "WEBLINK",
+    },
+  },
+  {
+    info: {
+      id: "46146",
+      name: "Subway",
+      cloudinaryImageId:
+        "RX_THUMBNAIL/IMAGES/VENDOR/2025/6/12/c04c9d75-115b-4354-a90f-7080c6cd0f9e_46146.jpg",
+      locality: "Phase 3",
+      areaName: "Phase 3",
+      costForTwo: "₹350 for two",
+      cuisines: ["sandwich", "Salads", "wrap", "Healthy Food"],
+      avgRating: 4.3,
+      parentId: "2",
+      avgRatingString: "4.3",
+      totalRatingsString: "11K+",
+      sla: {
+        deliveryTime: 15,
+        lastMileTravel: 1.3,
+        serviceability: "SERVICEABLE",
+        slaString: "15-20 mins",
+        lastMileTravelString: "1.3 km",
+        iconType: "ICON_TYPE_EMPTY",
+      },
+      availability: {
+        nextCloseTime: "2025-07-18 03:00:00",
+        opened: true,
+      },
+      badges: {},
+      isOpen: true,
+      type: "F",
+      badgesV2: {
+        entityBadges: {
+          imageBased: {},
+          textBased: {},
+          textExtendedBadges: {},
+        },
+      },
+      aggregatedDiscountInfoV3: {
+        header: "ITEMS",
+        subHeader: "AT ₹99",
+      },
+      differentiatedUi: {
+        displayType: "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+        differentiatedUiMediaDetails: {
+          lottie: {},
+          video: {},
+        },
+      },
+      reviewsSummary: {},
+      displayType: "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+      restaurantOfferPresentationInfo: {},
+      externalRatings: {
+        aggregatedRating: {
+          rating: "4.0",
+          ratingCount: "1.8K+",
+        },
+        source: "GOOGLE",
+        sourceIconImageId: "v1704440323/google_ratings/rating_google_tag",
+      },
+      ratingsDisplayPreference: "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY",
+    },
+    analytics: {
+      context: "seo-data-e9a27abf-ac63-46cd-a7da-166d8c006722",
+    },
+    cta: {
+      link: "https://www.swiggy.com/city/chandigarh/subway-phase-3-rest46146",
+      type: "WEBLINK",
+    },
+  },
 ];

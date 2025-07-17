@@ -1,10 +1,14 @@
 import React from 'react'
+import { LOGO_URL, logoUrl } from '../utils/url'
 
 function Header() {
   return (
     <div className='header'>
         <div className='logo-container'>
-        <img className='logo' src="https://cdn2.f-cdn.com/contestentries/2426851/74260034/6689bc27dfb41_thumb900.jpg"/>
+       <div className="logo">
+  <span className="fire-icon">🔥</span>
+  <span className="fire-text">Flames</span>
+</div>
         </div>
         <div className='nav-items'>
             <ul>

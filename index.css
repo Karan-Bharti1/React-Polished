@@ -2,8 +2,6 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
-  justify-content: center;
   font-family: sans-serif;
   background-color: #f9f9f9;
 }
@@ -12,20 +10,36 @@ body {
 .body {
   width: 100%;
   max-width: 1200px;
-  margin: 20px auto;
+  margin: 30px auto;
   padding: 0 20px;
 }
 
 /* Header Styles */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
 }
 
 .logo {
-  width: 100px;
-  margin-left: 50px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 28px;
+  color: orangered;
+  gap: 6px;
+  margin-left: 20px;
 }
+
+.fire-icon {
+  font-size: 32px;
+}
+
+.fire-text {
+  font-size: 28px;
+  color: orangered;
+}
+
 
 .nav-items > ul {
   display: flex;
@@ -87,15 +101,26 @@ body {
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  /* justify-content: space-between; */
   gap: 20px;
 }
 
-/* Search Bar */
-.search {
-  padding: 10px;
-}
 
+.primary-button{
+  margin:10px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: orangered;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  font-size: larger;
+}
+.primary-button:hover{
+  background-color: #fff;
+  color: orangered;
+  border :1px solid orangered;
+}
 /* Mobile Responsive */
 @media (max-width: 660px) {
   .nav-items > ul > li {
@@ -121,5 +146,8 @@ body {
 
   .res-card > h4 {
     font-size: 12px;
+  }
+  .primary-button{
+    font-size: medium;
   }
 }
