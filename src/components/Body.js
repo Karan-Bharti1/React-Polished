@@ -1,3 +1,4 @@
+
 import { restaurantData } from "../sampleData/data";
 import RestaurantCard from "./RestaurantCard";
 
