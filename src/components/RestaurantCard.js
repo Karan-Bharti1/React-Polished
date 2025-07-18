@@ -1,6 +1,6 @@
 import React from 'react'
-import { CDN_URL, swiggyImgUrl } from '../utils/url'
-
+import { CDN_URL } from '../utils/url'
+import { FaStar } from "react-icons/fa6";
 function RestaurantCard({resData}) {
     const {name,cuisines,cloudinaryImageId,avgRating,sla,costForTwo}=resData?.info
   return (
@@ -14,7 +14,7 @@ function RestaurantCard({resData}) {
         <h4>{cuisines.join(",")}</h4>
         </div>
          <div className='res-card-inner'>
-        <h4>{avgRating} stars</h4>
+        <h4>{avgRating} <FaStar/></h4>
         <h4>{costForTwo}</h4>
         </div>
       

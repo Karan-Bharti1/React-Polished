@@ -2,62 +2,81 @@ import { useEffect, useState } from "react";
 
 import RestaurantCard from "./RestaurantCard";
 import { RES_URL } from "../utils/url";
+import ShimmerRest from "./ShimmerRest";
+import { FaSearch } from "react-icons/fa";
+import { FaStar } from "react-icons/fa6";
 
 const Body = () => {
   const [restaurantLists, setRestaurantsList] = useState([]);
+  const [filteredList,setFilteredList]=useState([])
+  const [searchText, setSearchText] = useState("");
   const handleClick = () => {
     setRestaurantsList(() =>
       restaurantLists.filter((res) => res.info.avgRating > 4.3)
     );
   };
-  const fetchData = async() => {
-    const data =await  fetch(
-      RES_URL
-    )
-      const json=await data.json()
-      console.log(json.data?.cards)
-    console.log (json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-      setRestaurantsList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  const fetchData = async () => {
+    const data = await fetch(RES_URL);
+    const json = await data.json();
+    setRestaurantsList(
+      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
+    setFilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   };
-  useEffect(() => {fetchData()
-  console.log(restaurantLists)
+ 
+  useEffect(() => {
+    fetchData();
   }, []);
-if (restaurantLists.length === 0) {
-  return (
-    <div className="body">
-    <div className="res-container">
-      {[0, 1, 2, 3, 4, 5].map((_, index) => (
-        <div key={index} className="skeleton-card">
-         <div className="img-replacer"></div>
-       
-          <div className="double-end-text">
-            <div> </div>
-            <div> </div>
-          </div>
-          <div className="cuisine-replacer"></div>
-           <div className="double-end-text">
-            <div> </div>
-            <div> </div>
-          </div>
-         
-        </div>
-      ))}
-    </div>
-    </div>
-  );
-}
 
-  return (
+  return restaurantLists?.length === 0 ? (
+    <div className="body">
+      <div className="res-container">
+        {[0, 1, 2, 3, 4, 5].map((_, index) => (
+          <ShimmerRest key={index} />
+        ))}
+      </div>
+    </div>
+  ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            className="search-bar"
+            type="text"
+            value={searchText}
+            onChange={(e) => setSearchText(e.target.value)}
+            placeholder="Search Restaurant or Cuisine"
+          />
+          <button
+            className="search-button"
+            onClick={() => {
+               const filteredRestaurants = restaurantLists.filter((res) => {
+    const name = res.info.name.toLowerCase();
+    const cuisines = res.info.cuisines.join(",").toLowerCase();
+    const query = searchText.toLowerCase();
+
+    return name.includes(query) || cuisines.includes(query);
+  });
+              setFilteredList(filteredRestaurants);
+            }}
+          >
+            <FaSearch />
+          </button>
+        </div>
         <button onClick={handleClick} className="primary-button">
-          Top Rated Restaurants
+          4.3+ <FaStar />
         </button>
       </div>
       <div className="res-container">
-        {restaurantLists?.map((data) => (
+        {filteredList?.map((data) => (
           <RestaurantCard key={data.info.id} resData={data} />
         ))}
+        
+      </div>
+      <div>
+        {filteredList?.length===0 && (<>
+        <h2 className="no-res-text">No Restaurants Found</h2>
+        </>)}
       </div>
     </div>
   );

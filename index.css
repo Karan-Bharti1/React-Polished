@@ -14,11 +14,13 @@ body {
   padding: 0 20px;
 }
 
-/* Header Styles */
+
 .header {
   display: flex;
   justify-content: space-around;
   align-items: center;
+    background-color: orangered;
+    color:#fff;
 }
 
 .logo {
@@ -26,7 +28,7 @@ body {
   align-items: center;
   font-weight: bold;
   font-size: 28px;
-  color: orangered;
+  color:#fff;
   gap: 6px;
   margin-left: 20px;
 }
@@ -37,7 +39,7 @@ body {
 
 .fire-text {
   font-size: 28px;
-  color: orangered;
+  color:#fff;
 }
 
 
@@ -163,6 +165,35 @@ justify-content: space-around;
   color: orangered;
   border :1px solid orangered;
 }
+.search-button{
+   padding: 11px;
+  background-color: orangered;
+ box-sizing: border-box;
+   border: none;
+  color: #fff;
+  margin-left: 15px;
+  border-radius: 5px;
+}
+.search-button:hover{
+    background-color: #fff;
+  color: orangered;
+  border :1px solid orangered;
+}
+.search-bar{
+  width:400px;
+  padding: 11px;
+box-sizing: border-box;
+border-radius: 10px;
+}
+.filter{
+  display: flex;
+  justify-content: space-around;
+}
+.no-res-text{
+  color:gray;
+  text-align: center;
+  margin-top: 180px;
+}
 /* Mobile Responsive */
 @media (max-width: 660px) {
   .nav-items > ul > li {
@@ -191,8 +222,20 @@ justify-content: space-around;
   }
   .primary-button{
     font-size: medium;
+    padding: 3px;
+    margin:3px
+  }
+  .search-button{
+     font-size: medium;
+    padding: 3px;
+     margin-left: 5px;
   }
   .logo{
     font-size: 14px;
+  }
+  .search-bar{
+    width: 150px;
+    padding: 3px;
+    margin:3px
   }
 }

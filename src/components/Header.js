@@ -1,7 +1,8 @@
-import React from 'react'
-import { LOGO_URL, logoUrl } from '../utils/url'
+import React, { useState } from 'react'
+
 
 function Header() {
+  const [isLogin,setIsLogin]=useState(false)
   return (
     <div className='header'>
         <div className='logo-container'>
@@ -15,7 +16,7 @@ function Header() {
                   <li>Home</li>
                     <li>About</li>
                     <li>Cart</li>
-                    <li>Contact</li>
+                    <button onClick={()=>setIsLogin(!isLogin)} className='primary-button'>{isLogin?"Logout👤": "Login 👤"}</button>
             </ul>
           
         </div>
