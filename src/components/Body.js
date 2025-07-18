@@ -7,7 +7,7 @@ const Body = () => {
   const [restaurantLists, setRestaurantsList] = useState([]);
   const handleClick = () => {
     setRestaurantsList(() =>
-      restaurantLists.filter((res) => res.info.avgRating > 4.5)
+      restaurantLists.filter((res) => res.info.avgRating > 4.3)
     );
   };
   const fetchData = async() => {
@@ -22,6 +22,31 @@ const Body = () => {
   useEffect(() => {fetchData()
   console.log(restaurantLists)
   }, []);
+if (restaurantLists.length === 0) {
+  return (
+    <div className="body">
+    <div className="res-container">
+      {[0, 1, 2, 3, 4, 5].map((_, index) => (
+        <div key={index} className="skeleton-card">
+         <div className="img-replacer"></div>
+       
+          <div className="double-end-text">
+            <div> </div>
+            <div> </div>
+          </div>
+          <div className="cuisine-replacer"></div>
+           <div className="double-end-text">
+            <div> </div>
+            <div> </div>
+          </div>
+         
+        </div>
+      ))}
+    </div>
+    </div>
+  );
+}
+
   return (
     <div className="body">
       <div className="filter">
