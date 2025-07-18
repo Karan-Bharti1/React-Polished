@@ -150,4 +150,7 @@ body {
   .primary-button{
     font-size: medium;
   }
+  .logo{
+    font-size: 14px;
+  }
 }
