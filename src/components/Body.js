@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-
 import RestaurantCard from "./RestaurantCard";
 import { RES_URL } from "../utils/url";
 import ShimmerRest from "./ShimmerRest";
 import { FaSearch } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 
 const Body = () => {
   const [restaurantLists, setRestaurantsList] = useState([]);
@@ -71,7 +72,7 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredList?.map((data) => (
-          <RestaurantCard key={data.info.id} resData={data} />
+        <Link className="no-text-decor" key={data.info.id} to={`/restaurants/${data.info.id}` }><RestaurantCard  resData={data} /></Link> 
         ))}
         
       </div>

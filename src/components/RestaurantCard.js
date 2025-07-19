@@ -15,9 +15,8 @@ function RestaurantCard({resData}) {
         </div>
          <div className='res-card-inner'>
         <h4>{avgRating} <FaStar/></h4>
-        <h4>{costForTwo}</h4>
-        </div>
-      
+        <h4>{costForTwo}/-</h4>
+        </div> 
     </div>
   )
 }

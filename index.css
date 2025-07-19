@@ -6,7 +6,6 @@ body {
   background-color: #f9f9f9;
 }
 
-/* Body Wrapper */
 .body {
   width: 100%;
   max-width: 1200px;
@@ -82,6 +81,7 @@ body {
   box-sizing: border-box;
   overflow: hidden;
   min-height: 350px;
+   animation: shimmer 1.2s infinite;
 }
 .res-card:hover {
   cursor: pointer;
@@ -213,6 +213,115 @@ border-radius: 10px;
   text-align: center;
   margin-top: 180px;
 }
+.menu-container{
+  padding: 16px;
+ margin: 50px;
+}
+.details-card{
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  border-radius:10px;
+}
+.res-details-inner{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.res-details-inner> h3{
+color:orangered
+}
+.res-card-inner >p{
+  color:darkgrey
+}
+.res-details-inner-1{
+  display: flex;
+justify-content: space-between;
+
+}
+.res-details-inner-1 >h3 {
+  color:orangered;
+}
+.res-details-inner-1>p{
+  color:black
+}
+.restaurant-name{
+  text-align: center;
+    display: flex;
+  justify-content: space-between;
+
+}
+
+.restaurant-name >h2{
+  color:green
+}
+.shimmer-container {
+  padding: 16px;
+ margin: 50px;
+}
+.no-text-decor{
+  text-decoration: none;
+  color:black
+}
+
+.shimmer-box {
+  background-color: gainsboro;
+  border-radius: 6px;
+}
+
+
+.shimmer-header {
+  width: 40%;
+  height: 24px;
+  margin-bottom: 16px;
+}
+
+
+.shimmer-offer {
+  width: 90%;
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+
+.shimmer-search {
+  width: 100%;
+  height: 36px;
+  margin-bottom: 30px;
+}
+
+
+.shimmer-dish {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+
+.shimmer-dish-info {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.shimmer-title {
+  width: 60%;
+  height: 18px;
+  margin-bottom: 10px;
+}
+
+.shimmer-sub {
+  width: 80%;
+  height: 14px;
+}
+
+.shimmer-image {
+  width: 110px;
+  height: 90px;
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+
 /* Mobile Responsive */
 @media (max-width: 660px) {
   .nav-items > ul > li {

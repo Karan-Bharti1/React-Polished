@@ -8,6 +8,7 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Error from "./pages/Error";
+import Menu from "./pages/Menu";
 
 const AppLayout = () => {
   return (
@@ -33,6 +34,9 @@ const appRouter = createBrowserRouter([
   },{
     path:"/cart",
     element:<Cart/>
+  },{
+    path:"/restaurants/:restaurantId",
+    element:<Menu/>
   }],
     errorElement:<Error/>
   },
