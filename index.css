@@ -54,7 +54,7 @@ body {
   font-size: 24px;
 }
 
-/* Restaurant Card */
+
 .res-card {
   background: #fff;
   width: 350px;
@@ -126,7 +126,6 @@ justify-content: space-around;
     height: 15px; 
     border-radius: 4px;
 }
-/* Text inside card */
 .res-card > h3 {
   margin: 3px;
 }
@@ -135,30 +134,37 @@ justify-content: space-around;
   margin: 3px;
 }
 
-/* Card internal layout */
 .res-card-inner {
   display: flex;
   justify-content: space-between;
 }
 
-/* Card Container */
 .res-container {
   display: flex;
   flex-wrap: wrap;
-  /* justify-content: space-between; */
   gap: 20px;
 }
 
 
 .primary-button{
-  margin:10px;
   cursor: pointer;
   padding: 10px;
   background-color: orangered;
   border-radius: 5px;
   border: none;
   color: #fff;
-  font-size: larger;
+  font-size: large;
+  text-decoration: none;
+}
+.logo-text{
+  text-decoration: none;
+}
+.error-page{
+  background-color:orangered ;
+  color: #fff;
+  text-align: center;
+  padding: 4rem;
+  height: 100vh;
 }
 .primary-button:hover{
   background-color: #fff;
@@ -173,6 +179,19 @@ justify-content: space-around;
   color: #fff;
   margin-left: 15px;
   border-radius: 5px;
+}
+.secondary-button{
+   padding: 11px;
+  background-color: #fff;
+ box-sizing: border-box;
+   border: none;
+  color: orangered;
+  margin-left: 15px;
+  border-radius: 5px;
+  text-decoration: none;
+}
+.secondary-button:hover{
+ font-size: larger;
 }
 .search-button:hover{
     background-color: #fff;

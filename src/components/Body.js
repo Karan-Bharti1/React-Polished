@@ -11,7 +11,8 @@ const Body = () => {
   const [filteredList,setFilteredList]=useState([])
   const [searchText, setSearchText] = useState("");
   const handleClick = () => {
-    setRestaurantsList(() =>
+    setSearchText("")
+    setFilteredList(() =>
       restaurantLists.filter((res) => res.info.avgRating > 4.3)
     );
   };
@@ -26,6 +27,7 @@ const Body = () => {
  
   useEffect(() => {
     fetchData();
+
   }, []);
 
   return restaurantLists?.length === 0 ? (
