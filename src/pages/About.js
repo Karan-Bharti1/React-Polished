@@ -1,15 +1,14 @@
-import React from 'react'
-import Header from '../components/Header'
+import React from "react";
+import Header from "../components/Header";
+import UserClass from "../components/UserClass";
 
 function About() {
   return (
-    <div>
-       
-        <main>
-            <h2>This is about page</h2>
-        </main>
-    </div>
-  )
+    <main className="container">
+      <h2>This is about page</h2>
+      <UserClass />
+    </main>
+  );
 }
 
-export default About
+export default About;

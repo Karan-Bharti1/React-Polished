@@ -271,7 +271,10 @@ justify-content: space-between;
   justify-content: space-between;
 
 }
-
+.container{
+  margin: 50px auto;
+  max-width: 1200px;
+}
 .restaurant-name >h2{
   color:green
 }
