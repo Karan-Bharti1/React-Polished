@@ -6,7 +6,7 @@ function About() {
   return (
     <main className="container">
       <h2>This is about page</h2>
-      <UserClass />
+      <UserClass name="Karan" email="karanbharti.0129@gmail.com" />
     </main>
   );
 }
