@@ -2,19 +2,19 @@ import React from "react";
 class UserClass extends React.Component {
   constructor(props) {
     super(props);
-    console.log("Child Constructor")
+    console.log(this.props.name +" "+"Child Constructor")
     this.state = {
       // note this.state will container all the state variables
       count: 0,
     };
   }
   componentDidMount(){
-    console.log("Component Did Mount")
+    console.log(this.props.name +" "+"Component Did Mount")
   }
   render() {
     const { name, email } = this.props;
     const { count } = this.state;
-     console.log("Child render")
+     console.log(this.props.name +" "+"Child render")
     return (
       <div>
         <h1>{name}</h1>
