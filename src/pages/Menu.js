@@ -4,11 +4,11 @@ import ShimmerMenu from "../components/ShimmerMenu";
 import { FaStar } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { IoFastFood } from "react-icons/io5";
-import { CDN_URL, MENU_URL } from "../utils/url";
+import { CDN_URL, MENU_URL, PLACEHOLDER_URL } from "../utils/url";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 function Menu() {
   const { restaurantId } = useParams();
-  const data=useRestaurantMenu(restaurantId)
+  const resInfo=useRestaurantMenu(restaurantId)
   if (resInfo === null) return <ShimmerMenu />;
 
   const { name, avgRating, sla, costForTwoMessage, cuisines, availability } =
@@ -72,7 +72,7 @@ function Menu() {
                     <p>{item?.card?.info?.description}</p>
                   </div>
                   <div className="item-image">
-                    <img src={`${CDN_URL}${item?.card?.info?.imageId}`}/>
+                    <img src={`${CDN_URL}${item?.card?.info?.imageId}`|| PLACEHOLDER_URL}/>
                   </div>
                   </div>
                 </div>

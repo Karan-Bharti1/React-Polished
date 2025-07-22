@@ -3,3 +3,4 @@ export const LOGO_URL="https://cdn2.f-cdn.com/contestentries/2426851/74260034/66
 export const RES_URL="https://www.swiggy.com/dapi/restaurants/list/v5?lat=30.7046486&lng=76.71787259999999&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 export const MENU_URL="https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.7046486&lng=76.71787259999999&restaurantId="
 export const DUMMY_AVATAR="https://t4.ftcdn.net/jpg/02/44/43/69/360_F_244436923_vkMe10KKKiw5bjhZeRDT05moxWcPpdmb.jpg"
+export const PLACEHOLDER_URL="https://developers.elementor.com/docs/assets/img/elementor-placeholder-image.png"

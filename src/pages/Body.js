@@ -5,31 +5,18 @@ import ShimmerRest from "../components/ShimmerRest";
 import { FaSearch } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import useRestaurantData from "../utils/useRestaurantData";
 
 
 const Body = () => {
-  const [restaurantLists, setRestaurantsList] = useState([]);
-  const [filteredList,setFilteredList]=useState([])
   const [searchText, setSearchText] = useState("");
+  const {restaurantLists,setRestaurantsList,setFilteredList,filteredList}=useRestaurantData()
   const handleClick = () => {
     setSearchText("")
     setFilteredList(() =>
       restaurantLists.filter((res) => res.info.avgRating > 4.3)
     );
   };
-  const fetchData = async () => {
-    const data = await fetch(RES_URL);
-    const json = await data.json();
-    setRestaurantsList(
-      json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
-    );
-    setFilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
-  };
- 
-  useEffect(() => {
-    fetchData();
-
-  }, []);
 
   return restaurantLists?.length === 0 ? (
     <div className="body">
