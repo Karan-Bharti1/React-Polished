@@ -5,19 +5,10 @@ import { FaStar } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { IoFastFood } from "react-icons/io5";
 import { CDN_URL, MENU_URL } from "../utils/url";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 function Menu() {
   const { restaurantId } = useParams();
-  const [resInfo, setResInfo] = useState(null);
-  const [itemsData,setItemData]=useState([])
-  const fetchData = async () => {
-    const data = await fetch(`${MENU_URL}${restaurantId}`);
-    const json = await data.json();
-    setResInfo(json?.data?.cards);
-    
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const data=useRestaurantMenu(restaurantId)
   if (resInfo === null) return <ShimmerMenu />;
 
   const { name, avgRating, sla, costForTwoMessage, cuisines, availability } =

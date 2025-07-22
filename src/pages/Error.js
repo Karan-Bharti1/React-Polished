@@ -9,6 +9,7 @@ function Error() {
         <h2>Opps! Something went Wrong</h2>
         <h3>{error.status}: {error.statusText}</h3>
         <Link className='secondary-button' to="/">Back to Flames</Link>
+        
     </div>
   )
 }

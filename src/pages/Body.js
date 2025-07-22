@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "../components/RestaurantCard";
 import { RES_URL } from "../utils/url";
-import ShimmerRest from "./ShimmerRest";
+import ShimmerRest from "../components/ShimmerRest";
 import { FaSearch } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
