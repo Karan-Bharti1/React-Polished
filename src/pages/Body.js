@@ -6,18 +6,28 @@ import { FaSearch } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import useRestaurantData from "../utils/useRestaurantData";
-
-
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { IoCloudOfflineSharp } from "react-icons/io5";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const {restaurantLists,setRestaurantsList,setFilteredList,filteredList}=useRestaurantData()
+  const { restaurantLists, setRestaurantsList, setFilteredList, filteredList } =
+    useRestaurantData();
   const handleClick = () => {
-    setSearchText("")
+    setSearchText("");
     setFilteredList(() =>
       restaurantLists.filter((res) => res.info.avgRating > 4.3)
     );
   };
-
+  const  onlineStatus = useOnlineStatus();
+  if (onlineStatus === false)
+    return (
+      <>
+        <h1 className="offline-text">
+          It Looks Like You are Offline <IoCloudOfflineSharp />
+        </h1>
+        <h2 className="offline-text">Please Check your Internet Connection</h2>
+      </>
+    );
   return restaurantLists?.length === 0 ? (
     <div className="body">
       <div className="res-container">
@@ -40,13 +50,13 @@ const Body = () => {
           <button
             className="search-button"
             onClick={() => {
-               const filteredRestaurants = restaurantLists.filter((res) => {
-    const name = res.info.name.toLowerCase();
-    const cuisines = res.info.cuisines.join(",").toLowerCase();
-    const query = searchText.toLowerCase();
+              const filteredRestaurants = restaurantLists.filter((res) => {
+                const name = res.info.name.toLowerCase();
+                const cuisines = res.info.cuisines.join(",").toLowerCase();
+                const query = searchText.toLowerCase();
 
-    return name.includes(query) || cuisines.includes(query);
-  });
+                return name.includes(query) || cuisines.includes(query);
+              });
               setFilteredList(filteredRestaurants);
             }}
           >
@@ -59,14 +69,21 @@ const Body = () => {
       </div>
       <div className="res-container">
         {filteredList?.map((data) => (
-        <Link className="no-text-decor" key={data.info.id} to={`/restaurants/${data.info.id}` }><RestaurantCard  resData={data} /></Link> 
+          <Link
+            className="no-text-decor"
+            key={data.info.id}
+            to={`/restaurants/${data.info.id}`}
+          >
+            <RestaurantCard resData={data} />
+          </Link>
         ))}
-        
       </div>
       <div>
-        {filteredList?.length===0 && (<>
-        <h2 className="no-res-text">No Restaurants Found</h2>
-        </>)}
+        {filteredList?.length === 0 && (
+          <>
+            <h2 className="no-res-text">No Restaurants Found</h2>
+          </>
+        )}
       </div>
     </div>
   );
