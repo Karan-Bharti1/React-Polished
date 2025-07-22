@@ -370,28 +370,7 @@ justify-content: space-between;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   animation: blink 1.5s infinite;
 }
-.online-status {
-  display: flex;
-  align-items: center;
-  font-size: medium;
-  font-weight: medium;
-  margin-left: auto; /* push to right if inside nav */
-}
 
-.status {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.status.online {
-  color: #00c853; /* green */
-}
-
-.status.offline {
-  color: #d32f2f; /* red */
-  animation: blink 1.4s infinite;
-}
 /* Mobile Responsive */
 @media (max-width: 660px) {
   .nav-items > ul > li {

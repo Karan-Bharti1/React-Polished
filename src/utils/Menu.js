@@ -4,8 +4,8 @@ import ShimmerMenu from "../components/ShimmerMenu";
 import { FaStar } from "react-icons/fa6";
 import { MdAccessTimeFilled } from "react-icons/md";
 import { IoFastFood } from "react-icons/io5";
-import { CDN_URL, MENU_URL, PLACEHOLDER_URL } from "../utils/url";
-import useRestaurantMenu from "../utils/useRestaurantMenu";
+import { CDN_URL, MENU_URL, PLACEHOLDER_URL } from "./url";
+import useRestaurantMenu from "./useRestaurantMenu";
 function Menu() {
   const { restaurantId } = useParams();
   const resInfo=useRestaurantMenu(restaurantId)

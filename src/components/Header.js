@@ -18,19 +18,18 @@ function Header() {
       </div>
       <div className="nav-items">
         <ul>
-          <li className="online-status">
-            {onlineStatus ? (
-              <span className="status online">🟢 Online</span>
-            ) : (
-              <span className="status offline">🔴 Offline</span>
-            )}
-          </li>
 
           <li>
             <Link className="primary-button" to="/contact">
               Contact
             </Link>
+            
           </li>
+           <li>
+            <Link className="primary-button" to="/grocery">
+              Grocery
+            </Link>
+            </li>
           <li>
             <Link className="primary-button" to="/about">
               About
