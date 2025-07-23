@@ -1,54 +1,58 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { BsFillPersonLinesFill } from "react-icons/bs";
 
 function Header() {
   const [isLogin, setIsLogin] = useState(false);
   const onlineStatus = useOnlineStatus();
+
   return (
-    <div className="header">
-      <div className="logo-container">
-        <div className="logo">
-          <Link to="/" className="logo-text">
-            <span className="fire-icon">🔥</span>
-            <span className="fire-text">Flames</span>
+    <header className="bg-red-500 text-white px-4 py-4">
+        <div className="container max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+      <div className="container  flex flex-col justify-between md:flex-row  items-center">
+        <div className="text-2xl font-bold mb-2 md:mb-0">
+          <Link to="/" className="flex items-center space-x-2">
+            <span>🔥</span>
+            <span>Flames</span>
           </Link>
         </div>
-      </div>
-      <div className="nav-items">
-        <ul>
 
-          <li>
-            <Link className="primary-button" to="/contact">
-              Contact
-            </Link>
-            
-          </li>
-           <li>
-            <Link className="primary-button" to="/grocery">
-              Grocery
-            </Link>
+        {/* Navigation */}
+        <nav className="w-full md:w-auto">
+          <ul className="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+            <li>
+              <Link className="px-2 hover:text-lg text-base" to="/contact">
+                Contact
+              </Link>
             </li>
-          <li>
-            <Link className="primary-button" to="/about">
-              About
-            </Link>
-          </li>
-          <li>
-            <Link className="primary-button" to="/cart">
-              Cart
-            </Link>
-          </li>
-          <button
-            onClick={() => setIsLogin(!isLogin)}
-            className="primary-button"
-          >
-            {isLogin ? "Logout👤" : "Login 👤"}
-          </button>
-        </ul>
+            <li>
+              <Link className="px-2 hover:text-lg text-base" to="/grocery">
+                Grocery
+              </Link>
+            </li>
+            <li>
+              <Link className="px-2 hover:text-lg text-base" to="/about">
+                About
+              </Link>
+            </li>
+            <li>
+              <Link className="px-2 hover:text-lg text-base" to="/cart">
+                Cart
+              </Link>
+            </li>
+            <li>
+              <button
+                onClick={() => setIsLogin(!isLogin)}
+                className="hover:text-lg text-base px-2"
+              >
+                {isLogin ? "Logout 👤" : "Login 👤"}
+              </button>
+            </li>
+          </ul>
+        </nav>
       </div>
-    </div>
+      </div>
+    </header>
   );
 }
 

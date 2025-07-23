@@ -8,12 +8,12 @@ class UserClass extends React.Component {
 
     this.state = {
       userInfo: {
-        name: "Dummy",
-        location: "Default",
-        public_repos:0,
-        html_url:null,
-        avatar_url:null
-      }
+        name: "Dummy Name",
+        location: "Somewhere",
+        public_repos: 0,
+        html_url: "https://github.com/",
+        avatar_url: DUMMY_AVATAR,
+      },
     };
   }
 
@@ -22,27 +22,35 @@ class UserClass extends React.Component {
     const json = await data.json();
     console.log("API Response:", json);
 
-    this.setState({
-      userInfo: json
-    });
+    this.setState({ userInfo: json });
   }
-componentDidUpdate(){
-    console.log("Component Did Updation")
-}
-  render() {
-    const { name, location, avatar_url,public_repos,html_url } = this.state.userInfo;
 
-    console.log("Child Render");
+  render() {
+    const { name, location, avatar_url, public_repos, html_url } = this.state.userInfo;
 
     return (
-      <div className="developer-card">
-        <div>
-        <p>Name: {name}</p>
-        <p>Location: {location}</p>
-        <p>Public Repos: {public_repos}</p>
-        <p>🔗<a href={html_url} target="_blank" rel="noreferrer">GitHub Profile</a></p>
+      <div className="w-full bg-white shadow-md border border-gray-200 rounded-xl p-6 flex flex-col sm:flex-row items-center sm:items-start gap-6 transition duration-300 hover:shadow-lg">
+        {/* Avatar */}
+        <img
+          src={avatar_url || DUMMY_AVATAR}
+          alt="Avatar"
+          className="w-32 h-32 rounded-full object-cover border-4 border-gray-100"
+        />
+
+        {/* Info */}
+        <div className="text-center sm:text-left space-y-2">
+          <h3 className="text-2xl font-semibold text-gray-800">{name}</h3>
+          <p className="text-gray-600">📍 {location || "Unknown"}</p>
+          <p className="text-gray-600">📦 Public Repos: {public_repos}</p>
+          <a
+            href={html_url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block mt-2 text-blue-600 hover:underline font-medium"
+          >
+            🔗 View GitHub Profile
+          </a>
         </div>
-        <img src={avatar_url || DUMMY_AVATAR} alt="Avatar" width={150} />
       </div>
     );
   }

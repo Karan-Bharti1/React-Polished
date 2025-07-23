@@ -1,16 +1,14 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "../components/RestaurantCard";
-import { RES_URL } from "../utils/url";
 import ShimmerRest from "../components/ShimmerRest";
 import { FaSearch } from "react-icons/fa";
-import { FaStar } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import useRestaurantData from "../utils/useRestaurantData";
 import useOnlineStatus from "../utils/useOnlineStatus";
-import { IoCloudOfflineSharp } from "react-icons/io5";
+import OfflineDisplay from "../components/OfflineDisplay";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const { restaurantLists, setRestaurantsList, setFilteredList, filteredList } =
+  const { restaurantLists,setFilteredList, filteredList } =
     useRestaurantData();
   const handleClick = () => {
     setSearchText("");
@@ -18,37 +16,34 @@ const Body = () => {
       restaurantLists.filter((res) => res.info.avgRating > 4.3)
     );
   };
-  const  onlineStatus = useOnlineStatus();
+  const onlineStatus = useOnlineStatus();
   if (onlineStatus === false)
     return (
       <>
-        <h1 className="offline-text">
-          It Looks Like You are Offline <IoCloudOfflineSharp />
-        </h1>
-        <h2 className="offline-text">Please Check your Internet Connection</h2>
+        <OfflineDisplay />
       </>
     );
   return restaurantLists?.length === 0 ? (
-    <div className="body">
-      <div className="res-container">
+    <div className="container mx-auto px-4 py-6 max-w-6xl">
+      <div className="flex flex-wrap justify-center gap-4 px-2 mt-6 max-w-6xl">
         {[0, 1, 2, 3, 4, 5].map((_, index) => (
           <ShimmerRest key={index} />
         ))}
       </div>
     </div>
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="container mx-auto px-4 py-6 max-w-6xl">
+      <div className="flex flex-col md:flex-row justify-around gap-4">
+        <div className="flex my-2 sm:flex-row items-center gap-2">
           <input
-            className="search-bar"
+            className="border border-black p-3 rounded-sm w-full sm:w-[300px] md:w-[400px]"
             type="text"
             value={searchText}
             onChange={(e) => setSearchText(e.target.value)}
             placeholder="Search Restaurant or Cuisine"
           />
           <button
-            className="search-button"
+            className="p-4 bg-red-500 text-white rounded-sm cursor-pointer"
             onClick={() => {
               const filteredRestaurants = restaurantLists.filter((res) => {
                 const name = res.info.name.toLowerCase();
@@ -63,25 +58,34 @@ const Body = () => {
             <FaSearch />
           </button>
         </div>
-        <button onClick={handleClick} className="primary-button">
-          4.3+ <FaStar />
-        </button>
-      </div>
-      <div className="res-container">
-        {filteredList?.map((data) => (
-          <Link
-            className="no-text-decor"
-            key={data.info.id}
-            to={`/restaurants/${data.info.id}`}
+        <div>
+          <button
+            onClick={handleClick}
+            className="p-3 bg-red-500 m-4 text-white rounded-sm cursor-pointer"
           >
-            <RestaurantCard resData={data} />
-          </Link>
-        ))}
+           ⭐ Top rated
+          </button>
+        </div>
       </div>
+      <div className={`flex flex-wrap gap-4 px-2 ${
+    filteredList?.length === 1||filteredList?.length=== 2 ? "justify-start" : "justify-center"
+  }`}>
+  {filteredList?.map((data) => (
+    <div
+      key={data.info.id}
+      className="w-full sm:w-[48%] md:w-[30%] max-w-[320px]"
+    >
+      <Link to={`/restaurants/${data.info.id}`} className="no-underline">
+        <RestaurantCard resData={data} />
+      </Link>
+    </div>
+  ))}
+</div>
+
       <div>
         {filteredList?.length === 0 && (
           <>
-            <h2 className="no-res-text">No Restaurants Found</h2>
+            <h2 className="text-center mx-6 text-red-500">No Restaurants Found</h2>
           </>
         )}
       </div>
