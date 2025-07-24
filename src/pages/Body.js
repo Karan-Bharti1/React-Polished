@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import RestaurantCard from "../components/RestaurantCard";
+import RestaurantCard, { withOffersCard } from "../components/RestaurantCard";
 import ShimmerRest from "../components/ShimmerRest";
 import { FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -10,6 +10,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const { restaurantLists,setFilteredList, filteredList } =
     useRestaurantData();
+    console.log(restaurantLists)
   const handleClick = () => {
     setSearchText("");
     setFilteredList(() =>
@@ -23,6 +24,7 @@ const Body = () => {
         <OfflineDisplay />
       </>
     );
+    const RestaurantCardWithOffer=withOffersCard(RestaurantCard) // Higher Order Functions
   return restaurantLists?.length === 0 ? (
     <div className="container mx-auto px-4 py-6 max-w-6xl">
       <div className="flex flex-wrap justify-center gap-4 px-2 mt-6 max-w-6xl">
@@ -72,11 +74,18 @@ const Body = () => {
   }`}>
   {filteredList?.map((data) => (
     <div
-      key={data.info.id}
+      key={data?.info.id}
       className="w-full sm:w-[48%] md:w-[30%] max-w-[320px]"
     >
-      <Link to={`/restaurants/${data.info.id}`} className="no-underline">
-        <RestaurantCard resData={data} />
+      <Link to={`/restaurants/${data?.info?.id}`} className="no-underline">
+      {
+Object.keys(data?.info?.aggregatedDiscountInfoV3 || {}).length === 0
+
+    ? <RestaurantCard resData={data}/>
+    : <RestaurantCardWithOffer resData={data} />
+}
+
+       
       </Link>
     </div>
   ))}

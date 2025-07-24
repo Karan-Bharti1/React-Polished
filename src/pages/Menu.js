@@ -16,7 +16,7 @@ function Menu() {
 
   return (
     <div className="container mx-auto px-4 sm:px-6 md:px-8 py-6 max-w-6xl">
-      {/* Header Info */}
+    
       <div className="p-4 sm:p-6 shadow-md my-4 rounded-xl bg-white">
         <div className="flex justify-between flex-wrap gap-2 items-center">
           <h1 className="text-xl sm:text-2xl font-bold">{name}</h1>

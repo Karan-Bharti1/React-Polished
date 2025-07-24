@@ -3,18 +3,11 @@ import { CDN_URL } from "../utils/url";
 import { FaStar } from "react-icons/fa6";
 
 function RestaurantCard({ resData }) {
-  const {
-    name,
-    cuisines,
-    cloudinaryImageId,
-    avgRating,
-    sla,
-    costForTwo,
-  } = resData?.info;
+  const { name, cuisines, cloudinaryImageId, avgRating, sla, costForTwo } =
+    resData?.info || {};
 
   return (
     <div className="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]">
-
       <img
         className="w-full h-44 object-cover"
         src={CDN_URL + cloudinaryImageId}
@@ -29,7 +22,7 @@ function RestaurantCard({ resData }) {
             {sla?.deliveryTime} mins
           </span>
         </div>
-        <p className="text-sm text-gray-600 truncate">{cuisines.join(", ")}</p>
+        <p className="text-sm text-gray-600 truncate">{cuisines?.join(", ")}</p>
         <div className="flex justify-between items-center mt-auto">
           <div className="flex items-center text-yellow-500 font-medium gap-1">
             <FaStar className="text-sm" />
@@ -41,5 +34,18 @@ function RestaurantCard({ resData }) {
     </div>
   );
 }
-
+//Higher Order Component
+export const withOffersCard = (RestaurantCard) => {
+  return ({ resData }) => {
+    return (
+      <div>
+        <label className="absolute text-amber-50 bg-gray-800 p-1 rounded-l-md m-1">
+          {resData?.info?.aggregatedDiscountInfoV3?.header}-
+          {resData?.info?.aggregatedDiscountInfoV3?.subHeader}
+        </label>
+        <RestaurantCard resData={resData} />
+      </div>
+    );
+  };
+};
 export default RestaurantCard;

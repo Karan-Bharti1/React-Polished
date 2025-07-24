@@ -7,9 +7,9 @@ const useRestaurantData=()=>{
       const data = await fetch(RES_URL);
       const json = await data.json();
       setRestaurantsList(
-        json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+        json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
       );
-      setFilteredList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+      setFilteredList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
     };
    
     useEffect(() => {
