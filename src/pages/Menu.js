@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import ShimmerMenu from "../components/ShimmerMenu";
 import { CDN_URL, PLACEHOLDER_URL } from "../utils/url";
@@ -6,6 +6,7 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "../components/RestaurantCategory";
 
 function Menu() {
+  const [showIndex, setShowIndex] = useState(null);
   const { restaurantId } = useParams();
   const resInfo = useRestaurantMenu(restaurantId);
 
@@ -17,11 +18,12 @@ function Menu() {
 
   return (
     <div className="mx-auto px-4 sm:px-6 md:px-8 py-6 max-w-6xl">
-    
       <div className="p-4 sm:p-6 shadow-md my-4 rounded-xl bg-white">
         <div className="flex justify-between flex-wrap gap-2 items-center">
           <h1 className="text-xl sm:text-2xl font-bold">{name}</h1>
-          <h2 className="text-base font-bold text-green-600">⭐ {avgRating} </h2>
+          <h2 className="text-base font-bold text-green-600">
+            ⭐ {avgRating}{" "}
+          </h2>
         </div>
 
         <div className="flex justify-between flex-wrap gap-2 my-2 text-sm sm:text-base">
@@ -45,14 +47,25 @@ function Menu() {
       </div>
 
       {/* Menu Items */}
-      {cards.filter(card=>card?.card?.card?.["@type"]==="type.googleapis.com/swiggy.presentation.food.v2.ItemCategory").map((card, index) => (
-        <div key={index}>
-         <RestaurantCategory data={card}/>
-        </div>
-      ))}
+      {cards
+        .filter(
+          (card, index) =>
+            card?.card?.card?.["@type"] ===
+            "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+        )
+        .map((card, index) => (
+          <div key={index}>
+            <RestaurantCategory
+              data={card}
+              showItems={showIndex == index ? true : false}
+              setShowIndex={() =>
+                setShowIndex(showIndex == index ? null : index)
+              }
+            />
+          </div>
+        ))}
     </div>
   );
 }
 
 export default Menu;
-

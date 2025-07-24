@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { FaChevronDown } from "react-icons/fa";
 import ItemList from './ItemList';
 
-function RestaurantCategory({ data }) {
-    const [showItems,setShowItems]=useState(false)
+function RestaurantCategory({ data,showItems,setShowIndex }) {
+
   const { title, itemCards } = data?.card?.card || {};
 const handleClick=()=>{
-setShowItems(!showItems)
+    setShowIndex()
 }
   return (
     <div className="shadow-md bg-gray-50 w-full mt-6 rounded-lg">
