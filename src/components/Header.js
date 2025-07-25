@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 function Header() {
   const [isLogin, setIsLogin] = useState(false);
   const onlineStatus = useOnlineStatus();
-
+const {loggedInUser}=useContext(UserContext)
   return (
     <header className="bg-red-500 text-white px-4 py-4">
         <div className="container max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
@@ -47,6 +48,11 @@ function Header() {
               >
                 {isLogin ? "Logout 👤" : "Login 👤"}
               </button>
+            </li>
+            <li>
+               <div className="px-2 hover:text-lg text-base">
+                {loggedInUser}
+              </div>
             </li>
           </ul>
         </nav>

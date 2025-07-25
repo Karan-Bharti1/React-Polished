@@ -1,5 +1,6 @@
 import React from "react";
 import UserClass from "../components/UserClass";
+import UserContext from "../utils/UserContext";
 
 class About extends React.Component {
   constructor(props) {
@@ -22,10 +23,27 @@ class About extends React.Component {
             <br />
             Built for performance. Designed for users. 🍽️
           </p>
+          
+          <UserContext.Consumer>
+            {
+              data=>{
+                return(<>
+                <input placeholder="Update UserName" value={data.About} onChange={event=>data.setUser(event.target.value)} className="border border-black p-2" />
+                </>)
+              }
+            }
+          
+          </UserContext.Consumer>
+          <UserContext.Consumer>
+            {data=>{return (<h1 className="text-lg sm:text-xl text-gray-700 leading-relaxed">
+            User: {data?.loggedInUser}
+            </h1>)}}
+          </UserContext.Consumer>
         </section>
 
         {/* Developer Info */}
         <section>
+  
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-800 mb-4">
             👨‍💻 About The Developer
           </h2>

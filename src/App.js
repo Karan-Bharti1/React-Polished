@@ -1,4 +1,4 @@
-import React, { lazy,Suspense } from "react";
+import React, { lazy,Suspense, useState } from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Header";
 import Body from "./pages/Body";
@@ -10,15 +10,19 @@ import Error from "./pages/Error";
 import Menu from "./pages/Menu";
 import ShimmerRest from "./components/ShimmerRest";
 import ShimmerMenu from "./components/ShimmerMenu";
+import UserContext from "./utils/UserContext";
 // import Grocery from "./pages/Grocery";
 const Grocery=lazy(()=>import("./pages/Grocery"));
 const About=lazy(()=>import("./pages/About"))
 const AppLayout = () => {
+  const [user,setUser]=useState("Karan")
   return (
+    <UserContext.Provider value={{loggedInUser:user,setUser}}>
     <div>
       <Header />
       <Outlet/>
     </div>
+    </UserContext.Provider>
   );
 };
 const appRouter = createBrowserRouter([
