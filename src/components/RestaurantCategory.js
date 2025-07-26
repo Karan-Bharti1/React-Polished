@@ -21,7 +21,7 @@ const handleClick=()=>{
 
       {/* Render only if itemCards has data */}
       {showItems && Array.isArray(itemCards) && itemCards.length > 0 && (
-        <ItemList items={itemCards} />
+        <ItemList items={itemCards} inCart={false}/>
       )}
     </div>
   );

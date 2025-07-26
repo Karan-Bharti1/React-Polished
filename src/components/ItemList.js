@@ -1,7 +1,14 @@
 import React from "react";
 import { CDN_URL } from "../utils/url"; // make sure this points to Cloudinary base URL
+import { useDispatch } from "react-redux";
+import { addItem } from "../utils/cartSlice";
 
-function ItemList({ items }) {
+
+function ItemList({ items,inCart }) {
+  const dispatch=useDispatch()// For dispatching action
+  const handleAddCart=(item)=>{
+dispatch(addItem(item))
+  }
   return (
     <div>
       {items.map((item) => {
@@ -48,7 +55,7 @@ function ItemList({ items }) {
             {info?.imageId && (
               <div className="w-32 h-24 rounded-md ">
                 
-                <button className="p-1 absolute bg-black cursor-pointer hover:font-semibold  shadow-xl text-gray-50">Add+</button>
+           {!inCart &&     <button className="p-1 absolute bg-black cursor-pointer hover:font-semibold  shadow-xl text-gray-50" onClick={()=>handleAddCart(item)}>Add+</button>}
                 <img
                   src={CDN_URL + info.imageId}
                   alt={info.name}

@@ -8,21 +8,23 @@ import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Error from "./pages/Error";
 import Menu from "./pages/Menu";
-import ShimmerRest from "./components/ShimmerRest";
 import ShimmerMenu from "./components/ShimmerMenu";
 import UserContext from "./utils/UserContext";
-// import Grocery from "./pages/Grocery";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 const Grocery=lazy(()=>import("./pages/Grocery"));
 const About=lazy(()=>import("./pages/About"))
 const AppLayout = () => {
   const [user,setUser]=useState("Karan")
   return (
+    <Provider store={appStore}>
     <UserContext.Provider value={{loggedInUser:user,setUser}}>
     <div>
       <Header />
       <Outlet/>
     </div>
     </UserContext.Provider>
+    </Provider>
   );
 };
 const appRouter = createBrowserRouter([
