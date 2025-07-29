@@ -10,7 +10,7 @@ const Body = () => {
   const [searchText, setSearchText] = useState("");
   const { restaurantLists,setFilteredList, filteredList } =
     useRestaurantData();
-    console.log(restaurantLists)
+    
   const handleClick = () => {
     setSearchText("");
     setFilteredList(() =>
@@ -46,6 +46,7 @@ const Body = () => {
           />
           <button
             className="p-4 bg-red-500 text-white rounded-sm cursor-pointer"
+             data-testid="search-btn"
             onClick={() => {
               const filteredRestaurants = restaurantLists.filter((res) => {
                 const name = res.info.name.toLowerCase();
@@ -56,6 +57,7 @@ const Body = () => {
               });
               setFilteredList(filteredRestaurants);
             }}
+           
           >
             <FaSearch />
           </button>

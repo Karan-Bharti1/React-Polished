@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { useParams } from "react-router-dom";
 import ShimmerMenu from "../components/ShimmerMenu";
-import { CDN_URL, PLACEHOLDER_URL } from "../utils/url";
-import useRestaurantMenu from "../utils/useRestaurantMenu";
+import { CDN_URL, MENU_URL, PLACEHOLDER_URL } from "../utils/url";
 import RestaurantCategory from "../components/RestaurantCategory";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 function Menu() {
   const [showIndex, setShowIndex] = useState(null);
   const { restaurantId } = useParams();
+  
   const resInfo = useRestaurantMenu(restaurantId);
-
   if (resInfo === null) return <ShimmerMenu />;
 
   const { name, avgRating, sla, costForTwoMessage, cuisines, availability } =

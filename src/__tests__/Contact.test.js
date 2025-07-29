@@ -2,6 +2,7 @@ import { render,screen } from "@testing-library/react"
 import Contact from "../pages/Contact"
 import "@testing-library/jest-dom"
 describe("Contact Us Page",()=>{
+   
 test ("Should load heading in contact us component",()=>{
     render(<Contact/>) // renders on the jest-dom
    const heading= screen.getByRole("heading")

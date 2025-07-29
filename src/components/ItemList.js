@@ -10,7 +10,7 @@ function ItemList({ items,inCart }) {
 dispatch(addItem(item))
   }
   return (
-    <div>
+    <div >
       {items.map((item) => {
         const info = item?.card?.info;
         const price =
@@ -19,7 +19,7 @@ dispatch(addItem(item))
           info?.price / 100;
 
         return (
-          <div
+          <div data-testid="items"
             key={info?.id}
             className="flex flex-col sm:flex-row justify-between items-start gap-6 sm:gap-8  bg-white p-4 sm:p-6 my-4 rounded-xl"
           >

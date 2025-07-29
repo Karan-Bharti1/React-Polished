@@ -9,7 +9,6 @@ function Header() {
   const onlineStatus = useOnlineStatus();
 const {loggedInUser}=useContext(UserContext)
 const cartItems=useSelector(state=>state.cart.items)//Subscribing to the store using selector
-console.log(cartItems)
   return (
     <header className="bg-red-500 text-white px-4 py-4">
         <div className="container max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">

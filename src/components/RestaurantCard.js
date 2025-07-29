@@ -5,9 +5,8 @@ import { FaStar } from "react-icons/fa6";
 function RestaurantCard({ resData }) {
   const { name, cuisines, cloudinaryImageId, avgRating, sla, costForTwo } =
     resData?.info || {};
-
   return (
-    <div className="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]">
+    <div data-testid="resCard" className="flex flex-col bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-transform duration-300 hover:scale-[1.02]">
       <img
         className="w-full h-44 object-cover"
         src={CDN_URL + cloudinaryImageId}
@@ -36,6 +35,7 @@ function RestaurantCard({ resData }) {
 }
 //Higher Order Component
 export const withOffersCard = (RestaurantCard) => {
+
   return ({ resData }) => {
     return (
       <div>

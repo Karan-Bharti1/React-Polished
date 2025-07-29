@@ -13,7 +13,7 @@ const Cart = () => {
   }
   return ( 
         <main className='max-w-7xl mx-auto px-4 sm:px-6 md:px-8 py-6  '>
-            <h2 className='text-center font-bold mt-6 text-2xl'>Your Cart</h2>
+            <h2 data-testid="head" className='text-center font-bold mt-6 text-2xl'>Your Cart</h2>
          { items?.length>0 && ( <div className='flex justify-end'>
               <button onClick={handleClearCart} className='p-2 m-2 text-white bg-red-500 rounded-lg cursor-pointer'>Empty Cart</button>
             </div>)}
