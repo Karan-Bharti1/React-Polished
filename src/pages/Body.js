@@ -6,11 +6,26 @@ import { Link } from "react-router-dom";
 import useRestaurantData from "../utils/useRestaurantData";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import OfflineDisplay from "../components/OfflineDisplay";
+import { RES_URL } from "../utils/url";
 const Body = () => {
   const [searchText, setSearchText] = useState("");
-  const { restaurantLists,setFilteredList, filteredList } =
-    useRestaurantData();
-    
+     const [restaurantLists, setRestaurantsList] = useState([]);
+      const [filteredList,setFilteredList]=useState([])
+        const fetchData = async () => {
+          const data = await fetch(RES_URL);
+          const json = await data.json();
+          console.log(json)
+          setRestaurantsList(
+            json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+          );
+          setFilteredList(json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+        };
+       
+        useEffect(() => {
+          fetchData();
+          
+      
+        }, []);
   const handleClick = () => {
     setSearchText("");
     setFilteredList(() =>

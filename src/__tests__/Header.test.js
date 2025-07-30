@@ -43,6 +43,8 @@ describe("Testing Header Component", () => {
     fireEvent.click(loginButton);
     const logoutButton = screen.getByRole("button", { name: "Logout 👤" });
     expect(logoutButton).toBeInTheDocument();
+    fireEvent.click(logoutButton);
+    expect(loginButton).toBeInTheDocument()
   });
   test("Testing The About Button", () => {
     render(
